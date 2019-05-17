@@ -2,28 +2,35 @@
   <div class="head-container">
     <!-- 查询条件row-1 -->
     <el-row :gutter="20" class="header-search-row">
-      <el-col :span="7">
+      <el-col :span="5">
         <div>
           <el-input placeholder="请输入用户名" v-model="query.username" @keyup.enter.native="toQuery">
             <template slot="prepend">用户名请输入用户名</template>
           </el-input>
         </div>
       </el-col>
-      <el-col :span="7">
+      <el-col :span="5">
         <div>
           <el-input placeholder="请输入用电话" v-model="query.value" @keyup.enter.native="toQuery">
             <template slot="prepend">电话</template>
           </el-input>
         </div>
       </el-col>
-      <el-col :span="7">
+      <el-col :span="5">
         <div>
           <el-input placeholder="请输入邮箱" v-model="query.email" @keyup.enter.native="toQuery">
             <template slot="prepend">邮箱</template>
           </el-input>
         </div>
       </el-col>
-      <el-col :span="3">
+      <el-col :span="5">
+        <div>
+          <el-input placeholder="请输入邮箱" v-model="query.email" @keyup.enter.native="toQuery">
+            <template slot="prepend">邮箱</template>
+          </el-input>
+        </div>
+      </el-col>
+      <el-col :span="4">
         <el-button
           class="filter-item"
           type="success"
@@ -36,21 +43,28 @@
 
     <!-- 查询条件row-2 -->
     <el-row :gutter="20" class="header-search-row">
-      <el-col :span="7">
+      <el-col :span="5">
         <div>
           <el-input placeholder="请选择组织" v-model="query.value" @keyup.enter.native="toQuery">
             <template slot="prepend">组织</template>
           </el-input>
         </div>
       </el-col>
-      <el-col :span="7">
+      <el-col :span="5">
         <div>
           <el-input placeholder="请选择岗位" v-model="query.value" @keyup.enter.native="toQuery">
             <template slot="prepend">岗位</template>
           </el-input>
         </div>
       </el-col>
-      <el-col :span="7">
+      <el-col :span="5">
+        <div>
+          <el-input placeholder="请选择岗位" v-model="query.value" @keyup.enter.native="toQuery">
+            <template slot="prepend">岗位</template>
+          </el-input>
+        </div>
+      </el-col>
+      <el-col :span="5">
         <div class="el-input el-input-group el-input-group--prepend">
           <div class="el-input-group__prepend">状态</div>
           <el-select
@@ -69,13 +83,14 @@
           </el-select>
         </div>
       </el-col>
-      <el-col :span="3">
+      <el-col :span="4">
         <!--  清空 -->
         <el-button class="filter-item" size="mini" icon="el-icon-search" @click="clearQuery">清空</el-button>
       </el-col>
     </el-row>
 
-    <el-row :gutter="20"></el-row>
+    <div class="divider"></div>
+    <div class="hearder-btn-div">
     <el-row :gutter="20" class="header-btn">
       <!-- 新增 -->
       <el-col :span="12">
@@ -102,6 +117,7 @@
         >导出</el-button>
       </el-col>
     </el-row>
+    </div>
   </div>
 </template>
 
@@ -208,6 +224,12 @@ export default {
 <style>
 .header-btn {
   float: right;
+  margin-top:6px;
+  }
+.hearder-btn-div{
+  margin-top:6px;
+  background-color:#eee;
+  height:40px;
 }
 .el-col {
   border-radius: 4px;
